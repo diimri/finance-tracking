@@ -1,0 +1,19 @@
+<h1>My Portfolio</h1>
+
+<div class='search-area'>
+	<h3>Search Stocks</h3>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+
+	<%= form_tag search_stock_path , method: :get do %>
+
+	<%= text_field_tag :stock, params[:stock] ,placeholder:"Search for Stock identifier", autofous: true %>
+
+<!-- COPIED FROM W3 SCHOOLS ALERT -->
+	<button type="submit"><i class="fa fa-search"></i></button>
+<!-- ALERT END -->
+	<%end%>
+
+
+</div>

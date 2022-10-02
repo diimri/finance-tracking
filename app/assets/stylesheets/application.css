@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+.search-area {
+	padding-top: 50px; 
+	padding-left: 50px;
+}
+
+
