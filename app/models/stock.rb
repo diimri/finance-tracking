@@ -17,7 +17,13 @@ class Stock < ApplicationRecord
 		request["X-RapidAPI-Host"] = 'latest-stock-price.p.rapidapi.com'
 
 		response = http.request(request)
-		puts response.read_body
+		parsed = JSON.parse(response.body)[0]
+
+		begin
+			new(ticker:parsed["identifier"],name:parsed["symbol"],last_price:parsed["lastPrice"] )
+			#this way we add the json values to our database to display them.
+		rescue => exception
+		end
 	end
 
 end
