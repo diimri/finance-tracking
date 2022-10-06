@@ -1,10 +1,12 @@
 class Stock < ApplicationRecord
 
-	require 'uri'
-	require 'net/http'
-	require 'openssl'
+	has_many :user_stocks
+	has_many :users, through: :user_stocks
 
 	def self.current_price(identifier)
+		require 'uri'
+		require 'net/http'
+		require 'openssl'
 		
 		url = URI("https://latest-stock-price.p.rapidapi.com/price?Indices=NIFTY%20500&Identifier=#{identifier}")
 
